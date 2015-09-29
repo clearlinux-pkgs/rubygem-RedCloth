@@ -4,7 +4,7 @@
 #
 Name     : rubygem-RedCloth
 Version  : 4.2.9
-Release  : 4
+Release  : 5
 URL      : https://rubygems.org/downloads/https://rubygems.org/downloads/RedCloth-4.2.9.gem
 Source0  : https://rubygems.org/downloads/https://rubygems.org/downloads/RedCloth-4.2.9.gem
 Summary  : No detailed summary available
