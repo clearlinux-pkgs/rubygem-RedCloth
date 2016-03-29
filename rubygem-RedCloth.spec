@@ -4,9 +4,9 @@
 #
 Name     : rubygem-RedCloth
 Version  : 4.2.9
-Release  : 5
-URL      : https://rubygems.org/downloads/https://rubygems.org/downloads/RedCloth-4.2.9.gem
-Source0  : https://rubygems.org/downloads/https://rubygems.org/downloads/RedCloth-4.2.9.gem
+Release  : 6
+URL      : https://rubygems.org/downloads/RedCloth-4.2.9.gem
+Source0  : https://rubygems.org/downloads/RedCloth-4.2.9.gem
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
@@ -14,11 +14,13 @@ Requires: rubygem-RedCloth-bin
 Requires: rubygem-RedCloth-lib
 BuildRequires : ruby
 BuildRequires : rubygem-bundler
+BuildRequires : rubygem-devise
 BuildRequires : rubygem-diff-lcs
 BuildRequires : rubygem-rdoc
 BuildRequires : rubygem-rspec
 BuildRequires : rubygem-rspec-core
 BuildRequires : rubygem-rspec-expectations
+BuildRequires : rubygem-rspec-mocks
 BuildRequires : rubygem-rspec-support
 BuildRequires : rubygem-rvm
 
@@ -76,225 +78,86 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost
 pushd %{buildroot}%{gem_dir}/gems/RedCloth-4.2.9
-rspec spec/ || :
+rspec -I.:lib spec/ || :
 popd
 
 
 %files
 %defattr(-,root,root,-)
-/usr/lib64/ruby/gems/2.2.0/cache/RedCloth-4.2.9.gem
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/ERB/Util/cdesc-Util.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/ERB/Util/t-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/ERB/Util/t-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/ERB/Util/textilize-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/ERB/Util/textilize-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/ERB/cdesc-ERB.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/Object/cdesc-Object.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/Base/after_transform-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/Base/before_transform-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/Base/cdesc-Base.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/Base/formatter_methods-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/Base/ignore-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/Base/inline_redcloth_version-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/Base/method_missing-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/Base/notextile-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/Base/pba-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/Base/redcloth_version-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/acronym-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/after_transform-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/amp-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/apos-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/arrow-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/bc_close-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/bc_open-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/before_transform-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/bq_close-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/bq_open-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/br-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/caps-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/cdesc-HTML.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/clean_html-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/copyright-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/del-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/dim-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/dl_close-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/dl_open-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/ellipsis-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/emdash-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/endash-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/entity-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/escape-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/escape_attribute-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/escape_pre-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/fn-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/footno-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/gt-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/hr-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/html-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/html_block-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/ignored_line-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/image-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/inline_html-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/li_close-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/li_open-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/link-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/lt-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/multi_paragraph_quote-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/notextile-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/quot-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/quote1-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/quote2-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/registered-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/snip-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/squot-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/table_close-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/table_open-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/td-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/tr_close-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/tr_open-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/HTML/trademark-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/Settings/cdesc-Settings.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/Settings/latex_image_styles-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/acronym-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/arrow-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/bc_close-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/bc_open-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/begin_chunk-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/bq_close-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/bq_open-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/cdesc-LATEX.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/chunk_counter-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/code-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/copyright-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/dim-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/ellipsis-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/emdash-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/end_chunk-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/endash-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/entity-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/escape-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/escape_pre-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/fn-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/footno-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/image-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/inline_html-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/li_close-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/li_open-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/link-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/p-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/quote1-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/quote2-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/registered-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/snip-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/table_close-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/table_open-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/td-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/tr_close-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/tr_open-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/LATEX/trademark-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/Formatters/cdesc-Formatters.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/ParseError/cdesc-ParseError.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/apply_rules-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/cdesc-TextileDoc.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/filter_classes-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/filter_html-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/filter_ids-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/filter_styles-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/hard_breaks-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/html_esc-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/latex_esc-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/lite_mode-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/new-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/no_span_caps-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/sanitize_html-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/to-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/to_html-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/TextileDoc/to_latex-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/VERSION/%3d%3d-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/VERSION/cdesc-VERSION.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/VERSION/to_s-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/cdesc-RedCloth.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/include-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/RedCloth/new-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/cache.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/ext/redcloth_scan/page-Makefile.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/lib/tasks/page-pureruby_rake.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/page-CHANGELOG.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/page-COPYING.ri
-/usr/lib64/ruby/gems/2.2.0/doc/RedCloth-4.2.9/ri/page-README_rdoc.ri
-/usr/lib64/ruby/gems/2.2.0/extensions/x86_64-linux/2.2.0/RedCloth-4.2.9/gem.build_complete
-/usr/lib64/ruby/gems/2.2.0/extensions/x86_64-linux/2.2.0/RedCloth-4.2.9/gem_make.out
-/usr/lib64/ruby/gems/2.2.0/extensions/x86_64-linux/2.2.0/RedCloth-4.2.9/mkmf.log
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/.gemtest
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/.rspec
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/CHANGELOG
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/COPYING
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/Gemfile
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/README.rdoc
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/Rakefile
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/bin/redcloth
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/doc/textile_reference.html
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/ext/redcloth_scan/.RUBYARCHDIR.time
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/ext/redcloth_scan/Makefile
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/ext/redcloth_scan/extconf.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/ext/redcloth_scan/redcloth.h
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/ext/redcloth_scan/redcloth_attributes.c
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/ext/redcloth_scan/redcloth_attributes.o
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/ext/redcloth_scan/redcloth_inline.c
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/ext/redcloth_scan/redcloth_inline.o
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/ext/redcloth_scan/redcloth_scan.c
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/ext/redcloth_scan/redcloth_scan.o
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/lib/case_sensitive_require/RedCloth.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/lib/redcloth.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/lib/redcloth/erb_extension.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/lib/redcloth/formatters/base.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/lib/redcloth/formatters/html.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/lib/redcloth/formatters/latex.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/lib/redcloth/formatters/latex_entities.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/lib/redcloth/textile_doc.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/lib/redcloth/version.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/lib/redcloth_scan.jar
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/lib/tasks/pureruby.rake
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/redcloth.gemspec
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/benchmark_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/custom_tags_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/erb_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/extension_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/fixtures/basic.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/fixtures/code.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/fixtures/definitions.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/fixtures/extra_whitespace.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/fixtures/filter_html.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/fixtures/filter_pba.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/fixtures/html.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/fixtures/images.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/fixtures/instiki.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/fixtures/links.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/fixtures/lists.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/fixtures/poignant.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/fixtures/sanitize_html.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/fixtures/table.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/fixtures/textism.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/fixtures/threshold.yml
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/formatters/class_filtered_html_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/formatters/filtered_html_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/formatters/html_no_breaks_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/formatters/html_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/formatters/id_filtered_html_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/formatters/latex_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/formatters/lite_mode_html_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/formatters/no_span_caps_html_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/formatters/sanitized_html_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/formatters/style_filtered_html_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/parser_spec.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/spec/spec_helper.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/tasks/compile.rake
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/tasks/gems.rake
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/tasks/ragel_extension_task.rb
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/tasks/release.rake
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/tasks/rspec.rake
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/tasks/rvm.rake
-/usr/lib64/ruby/gems/2.2.0/specifications/RedCloth-4.2.9.gemspec
+/usr/lib64/ruby/gems/2.3.0/cache/RedCloth-4.2.9.gem
+/usr/lib64/ruby/gems/2.3.0/extensions/x86_64-linux/2.3.0/RedCloth-4.2.9/gem.build_complete
+/usr/lib64/ruby/gems/2.3.0/extensions/x86_64-linux/2.3.0/RedCloth-4.2.9/gem_make.out
+/usr/lib64/ruby/gems/2.3.0/extensions/x86_64-linux/2.3.0/RedCloth-4.2.9/mkmf.log
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/.gemtest
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/.rspec
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/CHANGELOG
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/COPYING
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/Gemfile
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/README.rdoc
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/Rakefile
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/bin/redcloth
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/doc/textile_reference.html
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/ext/redcloth_scan/.RUBYARCHDIR.time
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/ext/redcloth_scan/Makefile
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/ext/redcloth_scan/extconf.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/ext/redcloth_scan/redcloth.h
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/ext/redcloth_scan/redcloth_attributes.c
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/ext/redcloth_scan/redcloth_attributes.o
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/ext/redcloth_scan/redcloth_inline.c
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/ext/redcloth_scan/redcloth_inline.o
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/ext/redcloth_scan/redcloth_scan.c
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/ext/redcloth_scan/redcloth_scan.o
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/lib/case_sensitive_require/RedCloth.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/lib/redcloth.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/lib/redcloth/erb_extension.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/lib/redcloth/formatters/base.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/lib/redcloth/formatters/html.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/lib/redcloth/formatters/latex.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/lib/redcloth/formatters/latex_entities.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/lib/redcloth/textile_doc.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/lib/redcloth/version.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/lib/redcloth_scan.jar
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/lib/tasks/pureruby.rake
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/redcloth.gemspec
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/benchmark_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/custom_tags_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/erb_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/extension_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/fixtures/basic.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/fixtures/code.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/fixtures/definitions.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/fixtures/extra_whitespace.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/fixtures/filter_html.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/fixtures/filter_pba.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/fixtures/html.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/fixtures/images.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/fixtures/instiki.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/fixtures/links.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/fixtures/lists.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/fixtures/poignant.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/fixtures/sanitize_html.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/fixtures/table.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/fixtures/textism.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/fixtures/threshold.yml
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/formatters/class_filtered_html_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/formatters/filtered_html_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/formatters/html_no_breaks_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/formatters/html_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/formatters/id_filtered_html_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/formatters/latex_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/formatters/lite_mode_html_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/formatters/no_span_caps_html_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/formatters/sanitized_html_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/formatters/style_filtered_html_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/parser_spec.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/spec/spec_helper.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/tasks/compile.rake
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/tasks/gems.rake
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/tasks/ragel_extension_task.rb
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/tasks/release.rake
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/tasks/rspec.rake
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/tasks/rvm.rake
+/usr/lib64/ruby/gems/2.3.0/specifications/RedCloth-4.2.9.gemspec
 
 %files bin
 %defattr(-,root,root,-)
@@ -302,6 +165,6 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/ruby/gems/2.2.0/extensions/x86_64-linux/2.2.0/RedCloth-4.2.9/redcloth_scan.so
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/ext/redcloth_scan/redcloth_scan.so
-/usr/lib64/ruby/gems/2.2.0/gems/RedCloth-4.2.9/lib/redcloth_scan.so
+/usr/lib64/ruby/gems/2.3.0/extensions/x86_64-linux/2.3.0/RedCloth-4.2.9/redcloth_scan.so
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/ext/redcloth_scan/redcloth_scan.so
+/usr/lib64/ruby/gems/2.3.0/gems/RedCloth-4.2.9/lib/redcloth_scan.so
