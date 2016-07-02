@@ -4,7 +4,7 @@
 #
 Name     : rubygem-RedCloth
 Version  : 4.3.2
-Release  : 9
+Release  : 10
 URL      : https://rubygems.org/downloads/RedCloth-4.3.2.gem
 Source0  : https://rubygems.org/downloads/RedCloth-4.3.2.gem
 Summary  : No detailed summary available
@@ -54,6 +54,7 @@ gem unpack %{SOURCE0}
 gem spec %{SOURCE0} -l --ruby > rubygem-RedCloth.gemspec
 
 %build
+export LANG=C
 gem build rubygem-RedCloth.gemspec
 
 %install
